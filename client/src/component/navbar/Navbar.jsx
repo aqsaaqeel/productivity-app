@@ -2,6 +2,8 @@ import React from 'react'
 
 export const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <h1 className="text-3xl font-bold underline">
+    Hello Navbar
+  </h1>
   )
 }
