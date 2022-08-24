@@ -190,8 +190,8 @@ Distributed under the MIT License
 Project Link: [https://github.com/sahilarora02/SkillValley-Project](https://github.com/sahilarora02/SkillValley-Project)
 Contributors : [sahilarora02](https://github.com/sahilarora02)
                [Arnab2001](https://github.com/arnab2001)
-               [KajalKumari]()
-               [Aqsa]()
+               [KajalKumari](https://github.com/developers-codz)
+               [Aqsa](https://github.com/aqsaaqeel)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
