@@ -139,7 +139,7 @@ _How to setup this project_
 &nbsp; * **P0 features**
 - [ ] Dashboard and landing page
 - [ ] Sections(Tech/Non-tech)
-- [ ] Add new section and note
+- [ ] Add new note
 - [ ] Page(heading/Description/Bookmarks/Texts etc)  
 - [x] Rest APIs for CRUD oparation on Notes<br><br>* **P1 features**
 - [x] User Authentication
