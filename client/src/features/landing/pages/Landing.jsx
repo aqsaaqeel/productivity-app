@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom"
+import {useDocumentTitle} from "../../../hooks/useTitle"
 export const Landing = () => {
+  useDocumentTitle("Landing")
   return (
     <div>
       <div className="text-center bg-gray-50 text-gray-800 py-24 px-6">
