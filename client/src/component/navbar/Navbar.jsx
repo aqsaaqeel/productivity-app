@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -34,9 +35,9 @@ export const Navbar = () => {
               ></path>
             </svg>
           </button>
-          <a className="navbar-brand text-blue-600" href="#!">
+          <Link className="navbar-brand text-blue-600" to="/">
             ProductivityApp
-          </a>
+          </Link>
         </div>
         <div
           className="navbar-collapse collapse grow items-center"
