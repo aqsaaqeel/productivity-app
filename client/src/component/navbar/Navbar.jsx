@@ -1,6 +1,25 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import { deepOrange } from "@mui/material/colors";
+import { Avatar } from "@mui/material";
+import "./Navbar.css";
+import { useEffect } from "react";
 export const Navbar = () => {
+  let isLogin = localStorage.getItem("isLogin");
+  let letter ;
+  
+if(isLogin==1){
+  letter = localStorage.getItem("Letter");
+}
+
+  const freeLocalStorage = ()=>{
+    localStorage.clear();
+    window.location.reload();
+  }
+
+//   useEffect(()=>{
+// window.location.reload()
+//   },[isLogin])
   return (
     <nav className="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
       <div className="px-6 w-full flex flex-wrap items-center justify-between">
@@ -79,6 +98,7 @@ export const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center lg:ml-auto">
+          {!isLogin&&<Link to='login'>
           <button
             type="button"
             className="inline-block px-6 py-2.5 mr-2 bg-transparent text-blue-600 
@@ -89,7 +109,25 @@ export const Navbar = () => {
           >
             Login
           </button>
-
+          </Link>}
+          {isLogin && (
+          <div className="dropdown">
+            {" "}
+            <Avatar
+              className="dropbtn"
+              sx={{ bgcolor: deepOrange[500] }}
+              style={{ marginTop: "1px", height: "30px", width: "30px",marginLeft:"-50px" }}
+            >
+              {letter}
+            </Avatar>
+            <div className="dropdown-content"style={{marginLeft:'-90px'}}                                                                     >
+              <p>My Profile</p>
+              <p onClick={freeLocalStorage} style={{ cursor: "pointer" }}>
+                Logout
+              </p>
+            </div>
+          </div>
+        )}
           <button
             type="button"
             className="inline-block px-6 py-2.5 bg-blue-600 text-white 

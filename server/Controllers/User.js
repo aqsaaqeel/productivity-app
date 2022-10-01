@@ -15,7 +15,11 @@ Login
 async function UserRegistration(req, res, next) {
   
     try {
-
+ 
+      const details = await user.findOne({Email:req.body.Email});
+        if(details){
+          return res.status(401).json("Already exist");
+        }
 
       const salt = await bcrypt.genSalt(10);
       const Secpassword = await bcrypt.hash(req.body.Password, salt);
@@ -24,7 +28,6 @@ async function UserRegistration(req, res, next) {
        Name:req.body.Name,
        Email:req.body.Email,
        Password:Secpassword,
-       ContactNo:req.body.ContactNo
 
       });
               console.log("data->",data);
@@ -43,7 +46,7 @@ async function UserRegistration(req, res, next) {
     const { Email, Password } = req.body;
     if (!Email || !Password)
       return res
-        .status(400)
+        .status(401)
         .json({ message: "Please provide email and password " });
   
     try {
@@ -51,13 +54,14 @@ async function UserRegistration(req, res, next) {
                 
       if (!data) {
         console.log("No user exist with this email.");
-        return res.status(401).json({ message: "No user exist with this email" });
+        return res.status(402).json({ message: "No user exist with this email" });
       }
       const pass = await user.findOne({ Email: Email });
       if (!bcrypt.compareSync(Password, pass.Password)) {
-        return res.status(402).json({ message: "Password Incorrect" });
+        return res.status(403).json({ message: "Password Incorrect" });
       } else {
         console.log("Login Successfully done now");
+        console.log(pass);
         return res.status(200).json({ pass} );
       }
   
