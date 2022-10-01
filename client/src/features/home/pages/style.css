@@ -1,0 +1,6 @@
+.shadow-black{box-shadow: 0 3px 5px rgb(0 0 0 / 20%);}
+.editor-wrapper{
+    width:66.67%;
+    min-height:300px;
+    font-size: 1.2rem;
+}
