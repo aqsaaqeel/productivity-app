@@ -1,10 +1,9 @@
 import './App.css';
+import './index.css';
 import {Routes,Route} from "react-router-dom"
 import {Login,Landing, Signup,Home} from "./features"
 import { Navbar,Footer } from './component';
 import  Todo from './component/Todo/Todo';
-
-
 
 function App() {
   return (
